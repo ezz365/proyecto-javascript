@@ -1,3 +1,4 @@
+/*ARRAY*/
 let choices;
 const hamburguesas = [
     {
@@ -21,7 +22,7 @@ const hamburguesas = [
 
 ]
 
-
+/*SWITCH*/
 do{
     console.log('1. Cheeseburger + Papas y Bebida \n 2. Chicken Crispy + Papas y Bebida \n 3. Nuggets + Papas y Bebida \n 0. Cancelar');
     choices = prompt(
@@ -48,9 +49,10 @@ do{
             alert("Opción incorrecta. Por favor ingrese un número del 0 al 3");
             console.log('Opción incorrecta');
     }
-
+/*WHILE*/
 }while(choices !== '0');
 
+/*FUNCTION */
 function addToBurgers(id, name, contenido, adicional){
 
     hamburguesas.push({
@@ -65,9 +67,7 @@ function addToBurgers(id, name, contenido, adicional){
 
 
 
-/*IF
-ADICIONAL
-*/
+/*IF ADICIONAL*/
 let adicional = 0;
 
 if(adicional == 0){
@@ -77,9 +77,10 @@ if(adicional == 0){
 }
 
 function añadir(){
-for(let adicional = 2; adicional < 10; adicional++){
-    console.log("Se le agrega " + adicional + " adicionales");
-}}
+    for(let adicional = 2; adicional < 10; adicional++){
+        console.log("Se le agrega " + adicional + " adicionales");
+    }
+}
 añadir();
 
 
