@@ -25,7 +25,7 @@ const hamburguesas = [
 /*SWITCH*/
 do{
     choices = prompt(
-        "Elige la opción: \n1. Agregar adicional \n2. Ver hamburguesas \n0. Salir "
+        "Elige la opción: \n1. Agregar hamburguesa nueva \n2. Ver hamburguesas \n0. Salir "
     );
     switch(choices){
         case '1':
