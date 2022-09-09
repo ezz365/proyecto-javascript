@@ -1,37 +1,79 @@
-let inputValue;
-
-do{
-    console.log('1. Cheeseburger + Papas y Bebida \n 2. Chicken Crispy + Papas y Bebida \n 3. Nuggets + Papas y Bebida \n 0. Cancelar');
-    inputValue = prompt(
-        "Elige el tipo de carne (si quieres dejar de pedir apreta 0): "
-    );
-    switch(inputValue){
-        case '0':
-            alert('Muchas gracias');
-            console.log('Muchas gracias');
-        break;
-        case '1':
-            alert('Elegiste agregarle carne de res');
-            console.log('Elegiste la opción carne de res');
-        break;
-        case '2':
-            alert('Elegiste agregarle paty de soja');
-            console.log('Elegiste la opción vegana');
-        break;
-        case '3':
-            alert('Elegiste agregarle pollo crispy');
-            console.log('Elegiste la opción carne de pollo');
-        break;
-        default:
-            alert("Opción incorrecta. Por favor ingrese un número del 0 al 3");
-            console.log('Opción incorrecta');
+/*ARRAY*/
+let choices;
+const hamburguesas = [
+    {
+        id: 1,
+        carne: "Res",
+        papas: "Normales",
+        gaseosa: "Fanta"
+    },
+    {
+        id: 2,
+        carne: "Pollo",
+        papas: "Normales",
+        gaseosa: "Agua"
+    },
+    {
+        id: 3,
+        carne: "Soja",
+        papas: "Normales",
+        gaseosa: "Coca-cola"
     }
 
-}while(inputValue !== '0');
+];
 
-/*IF
-ADICIONAL
-*/
+/*SWITCH*/
+do{
+    choices = prompt(
+        "Elige la opción: \n1. Agregar hamburguesa nueva \n2. Ver hamburguesas \n0. Salir "
+    );
+    switch(choices){
+        case '1':
+                const carne = (prompt("Escribe el nombre de la carne: \n- Res \n- Pollo \n- Soja"));
+                const papas = (prompt("Escribe el nombre de las papas fritas: \n- Normales \n- Cheddar \n- Bacon"));
+                const gaseosa = (prompt("Escribe el nombre de la bebida: \n- Coca-cola \n- Agua \n- Fanta"));
+                const id = ultimoID() + 1;
+                addToBurgers(id, carne, papas, gaseosa)
+                console.log("Creaste el pedido con exito");
+            break;
+        case '2':
+                listaHamburguesas();
+            break;
+        case '0':
+                alert('Muchas gracias');
+                console.log('Muchas gracias');
+            break;
+        default:
+                alert("Opción incorrecta. Por favor ingrese un número del 0 al 2");
+                console.log('Opción incorrecta');
+            break;   
+    }
+/*WHILE*/
+}while(choices !== '0');
+
+/*FUNCTION */
+function addToBurgers(id, carne, papas, gaseosa){
+
+    hamburguesas.push({
+        id,
+        carne,
+        papas,
+        gaseosa,
+    })
+
+    return "Creaste con exito la orden" + id;  
+}
+
+function ultimoID(){
+    return hamburguesas.length;
+}
+
+function listaHamburguesas(){
+    hamburguesas.forEach((hamburguesa) => console.log(hamburguesa.id + " - " + hamburguesa.carne + " - " + hamburguesa.papas + " - " + hamburguesa.gaseosa));
+}
+
+
+/*IF ADICIONAL
 let adicional = 0;
 
 if(adicional == 0){
@@ -41,14 +83,13 @@ if(adicional == 0){
 }
 
 function añadir(){
-for(let adicional = 2; adicional < 10; adicional++){
-    console.log("Se le agrega " + adicional + " adicionales");
-}}
+    for(let adicional = 2; adicional < 10; adicional++){
+        console.log("Se le agrega " + adicional + " adicionales");
+    }
+}
 añadir();
 
 
+function agregarAdicionales(){
 
-
-
-
-
+}*/
